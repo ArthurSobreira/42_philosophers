@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 13:07:11 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:26:29 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@
 # define RED		"\033[0;31m"
 # define RED_UNDER	"\033[4;31m"
 # define CYAN		"\033[0;36m"
-# define CYAN_UNDER	"\033[4;36m"
 # define CYAN_BOLD	"\033[1;36m"
+# define WHITE_BOLD	"\033[1;37m"
 # define GREEN		"\033[0;32m"
 # define YELLOW		"\033[0;33m"
 # define BLUE		"\033[0;34m"
