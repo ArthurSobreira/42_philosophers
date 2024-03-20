@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:02:32 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 13:17:45 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/20 13:25:39 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ t_bool	validate_digits(int argc, char *argv[])
 t_bool print_error(char *msg)
 {
     const char *guide = 
-        "\n "  CYAN_UNDER "Usage:" RESET " ./philo"
+        "\n "  CYAN_BOLD "Usage:" RESET WHITE_BOLD" ./philo"RESET
         " "    OPEN_SBRACKET "number_of_philosophers" CLOSE_SBRACKET
         " "    OPEN_SBRACKET "time_to_die" CLOSE_SBRACKET "\n"
         "\t\t" OPEN_SBRACKET "time_to_eat" CLOSE_SBRACKET
