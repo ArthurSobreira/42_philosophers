@@ -14,7 +14,10 @@ HEADER_PATH = ./includes
 BIN_PATH = ./bin/
 SOURCES_PATH = ./src/
 
-SOURCES = main.c
+SOURCES = \
+	error.c \
+	main.c \
+	utils.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 
