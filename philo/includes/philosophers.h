@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/19 15:30:01 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/20 12:38:14 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,13 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <string.h>
+# include "defines.h"
+
+typedef enum e_bool
+{
+	FALSE,
+	TRUE
+}				t_bool;
 
 typedef struct s_philo
 {
@@ -30,5 +37,14 @@ typedef struct s_philo
 	struct s_data	*data;
 	pthread_t		thread;
 }				t_philo;
+
+/* Utils */
+t_bool	ft_isnumber(char *str);
+long	ft_atol(const char *nptr);
+
+/* Error */
+t_bool	validate_args(int argc, char *argv[]);
+t_bool	validate_digits(int argc, char *argv[]);
+t_bool	print_error(char *msg);
 
 #endif
