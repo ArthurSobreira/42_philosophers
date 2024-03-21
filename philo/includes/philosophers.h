@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 12:38:14 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:57:05 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_philo
 /* Utils */
 t_bool	ft_isnumber(char *str);
 long	ft_atol(const char *nptr);
+size_t	ft_strlen(const char *s);
 
 /* Error */
 t_bool	validate_args(int argc, char *argv[]);
