@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:02:32 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 17:16:55 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/21 11:57:16 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ t_bool print_error(char *msg)
         "\t\t" OPEN_SBRACKET "times_each_philosopher_must_eat" CLOSE_SBRACKET
 		" (optional)\n\n";
 
-    write(STDERR_FILENO, msg, strlen(msg));
-    write(STDERR_FILENO, usage_guide, strlen(usage_guide));
+    write(STDERR_FILENO, msg, ft_strlen(msg));
+    write(STDERR_FILENO, usage_guide, ft_strlen(usage_guide));
     return (FALSE);
 }
