@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:28:29 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 12:29:23 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/21 12:01:10 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,14 @@ long	ft_atol(const char *nptr)
 		i++;
 	}
 	return (result * is_negative);
+}
+
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
 }
