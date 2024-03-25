@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:02:32 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/21 11:57:16 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/25 10:16:18 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,9 @@ t_bool	validate_digits(int argc, char *argv[])
 		if (!ft_isnumber(argv[index]))
 			return (print_error(NO_NUM));
 		num = ft_atol(argv[index]);
-		if (num < 0)
+		if (num == 0)
+			return (print_error(ZERO_NUM));
+		else if (num < 0)
 			return (print_error(NEG_NUM));
 		else if (num > __INT_MAX__)
 			return (print_error(BIG_NUM));
