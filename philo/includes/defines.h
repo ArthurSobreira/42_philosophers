@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/20 13:26:29 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/25 10:13:47 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@
 # define FEW_ARGS 	ERROR_MSG RED" Too few arguments :(\n"RESET
 # define MANY_ARGS	ERROR_MSG RED" Too many arguments :(\n"RESET
 # define NO_NUM		ERROR_MSG RED" Argument is not a number :(\n"RESET
+# define ZERO_NUM	ERROR_MSG RED" Argument is zero :(\n"RESET
 # define NEG_NUM 	ERROR_MSG RED" Argument is a negative number :(\n"RESET
 # define BIG_NUM 	ERROR_MSG RED" Argument is too big :(\n"RESET
 # define OPEN_SBRACKET	CYAN_BOLD"["RESET
