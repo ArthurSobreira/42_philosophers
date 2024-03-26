@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/21 11:57:05 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:14:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,21 +27,34 @@ typedef enum e_bool
 	TRUE
 }				t_bool;
 
+typedef struct s_data
+{
+	struct s_philo	*philos_array;
+	pthread_mutex_t	print;
+	t_bool			philo_dead;
+	size_t			start_time;
+	size_t			philo_count;
+	size_t			time_to_die;
+	size_t			time_to_eat;
+	size_t			time_to_sleep;
+	size_t			eat_count;
+}				t_data;
+
 typedef struct s_philo
 {
-	int				id;
-	int				left_fork;
-	int				right_fork;
-	int				eat_count;
-	long			last_eat;
-	struct s_data	*data;
+	size_t			id;
+	size_t			eat_count;
+	size_t			last_eat;
+	t_data			*data;
 	pthread_t		thread;
+	pthread_mutex_t	fork;
 }				t_philo;
 
 /* Utils */
 t_bool	ft_isnumber(char *str);
-long	ft_atol(const char *nptr);
 size_t	ft_strlen(const char *s);
+long	ft_atol(const char *nptr);
+size_t	ft_atost(const char *nptr);
 
 /* Error */
 t_bool	validate_args(int argc, char *argv[]);
