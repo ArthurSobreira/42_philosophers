@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:28:29 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/21 12:01:10 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/26 12:05:40 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,16 @@ t_bool	ft_isnumber(char *str)
 	return (TRUE);
 }
 
+size_t	ft_strlen(const char *s)
+{
+	size_t	length;
+
+	length = 0;
+	while (s[length] != '\0')
+		length++;
+	return (length);
+}
+
 long	ft_atol(const char *nptr)
 {
 	size_t	i;
@@ -61,12 +71,28 @@ long	ft_atol(const char *nptr)
 	return (result * is_negative);
 }
 
-size_t	ft_strlen(const char *s)
+size_t	ft_atost(const char *nptr)
 {
-	size_t	length;
+	size_t	i;
+	size_t	result;
+	int		is_negative;
 
-	length = 0;
-	while (s[length] != '\0')
-		length++;
-	return (length);
+	i = 0;
+	result = 0;
+	is_negative = 1;
+	while (((nptr[i] >= 9) && (nptr[i] <= 13)) || ((nptr[i]) == 32))
+		i++;
+	if ((nptr[i] == '-') || (nptr[i] == '+'))
+	{
+		if ((nptr[i] == '-'))
+			is_negative *= -1;
+		i++;
+	}
+	while (ft_isdigit(nptr[i]))
+	{
+		result *= 10;
+		result += nptr[i] - '0';
+		i++;
+	}
+	return (result * is_negative);
 }
