@@ -1,6 +1,6 @@
 NAME = philo
-CFLAGS = -Wall -Wextra -Werror -g3
-TFLAGS = -lpthread
+CFLAGS = -Wall -Wextra -Werror -g3 -fsanitize=thread
+TFLAGS = -pthread
 
 # Colors Definition 
 GREEN = "\033[32;1m"
