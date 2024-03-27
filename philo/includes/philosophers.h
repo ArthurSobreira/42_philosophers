@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/26 12:14:23 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:32:32 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,13 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <string.h>
-# include "defines.h"
-
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}				t_bool;
+# include "utils.h"
 
 typedef struct s_data
 {
 	struct s_philo	*philos_array;
 	pthread_mutex_t	print;
+	pthread_mutex_t	m_vars[VARS_COUNT];
 	t_bool			philo_dead;
 	size_t			start_time;
 	size_t			philo_count;
