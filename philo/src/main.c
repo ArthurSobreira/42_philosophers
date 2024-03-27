@@ -6,11 +6,11 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:27:39 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/26 12:15:15 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:01:03 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
+#include "../includes/philosophers.h"
 
 t_data	*get_data(void)
 {
@@ -19,11 +19,12 @@ t_data	*get_data(void)
 	return (&data);
 }
 
-void	start_dinner(int argc, char *argv[])
+void	init_data(int argc, char *argv[])
 {
 	t_data	*data;
 	size_t	index;
 
+	index = 0;
 	data = get_data();
 	data->philo_dead = FALSE;
 	data->philo_count = ft_atost(argv[1]);
@@ -34,6 +35,9 @@ void	start_dinner(int argc, char *argv[])
 		data->eat_count = ft_atost(argv[5]);
 	else
 		data->eat_count = __SIZE_MAX__;
+	pthread_mutex_init(&data->print, NULL);
+	while (index < VARS_COUNT)
+		pthread_mutex_init(&data->m_vars[index++], NULL);
 	data->philos_array = malloc(sizeof(t_philo) * data->philo_count);
 }
 
@@ -44,7 +48,7 @@ int	main(int argc, char *argv[])
 	if (validate_args(argc, argv))
 	{
 		data = get_data();
-		start_dinner(argc, argv);
+		init_data(argc, argv);
 		return (EXIT_SUCCESS);
 	}
 	return (EXIT_FAILURE);
