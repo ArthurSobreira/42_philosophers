@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/27 12:32:32 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/27 12:57:17 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,10 +37,9 @@ typedef struct s_data
 
 typedef struct s_philo
 {
-	size_t			id;
+	size_t			philo_id;
 	size_t			eat_count;
 	size_t			last_eat;
-	t_data			*data;
 	pthread_t		thread;
 	pthread_mutex_t	fork;
 }				t_philo;
