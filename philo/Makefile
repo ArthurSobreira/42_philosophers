@@ -20,6 +20,7 @@ SOURCES = \
 	main.c \
 	mutex.c \
 	mutex2.c \
+	philo_life.c \
 	utils.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
