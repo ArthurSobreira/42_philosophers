@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/27 12:32:24 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:09:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 # define CLOSE_SBRACKET "\033[1;36m]\033[0m"
 
 /* Utils */
-# define VARS_COUNT	6
+# define VARS_COUNT	10
 
 typedef enum e_bool
 {
@@ -53,7 +53,10 @@ enum e_vars
 	M_TIME_TO_DIE,
 	M_TIME_TO_EAT,
 	M_TIME_TO_SLEEP,
-	M_EAT_COUNT
+	M_TOTAL_EAT_COUNT,
+	M_PHILO_ID,
+	M_EAT_COUNT,
+	M_LAST_EAT
 };
 
 #endif
