@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:06:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/28 16:23:49 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/28 17:15:21 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,31 @@ void	init_data(int argc, char *argv[])
 	data->philos_array = malloc(sizeof(t_philo) * data->philo_count);
 }
 
-void	print_status(t_philo *philo, char *status)
+void	print_status(t_philo *philo, char *msg)
+{
+	t_data	*data;
+	size_t	time;
+
+	if (getter_philo_death() == TRUE)
+		return ;
+	data = get_data();
+	time = getter_current_time();
+	pthread_mutex_lock(&data->print);
+	printf("%-4zu %-2zu %-3s\n", time, getter_philo_id(philo), msg);
+	pthread_mutex_unlock(&data->print);
+}
+
+void	handle_single_philo(t_philo *philo)
 {
 	t_data	*data;
 
 	data = get_data();
-	pthread_mutex_lock(&data->print);
-	printf("%zu %zu %s\n", get_time(data), philo->philo_id, status);
-	pthread_mutex_unlock(&data->print);
+	print_status(philo, TAKE_FORK);
+	usleep(data->time_to_die * 1000);
+	print_status(philo, DIED);
+	pthread_mutex_lock(&data->m_vars[M_PHILO_DEAD]);
+	data->philo_dead = TRUE;
+	pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
 }
 
 void	*philo_life(void *philo)
@@ -54,19 +71,15 @@ void	*philo_life(void *philo)
 	philo_data->last_eat = data->start_time;
 	if (data->philo_count == 1)
 	{
-		usleep(data->time_to_die * 1000);
-		pthread_mutex_lock(&data->print);
-		printf("%zu %zu died\n", get_time(data), philo_data->philo_id);
-		data->philo_dead = TRUE;
-		pthread_mutex_unlock(&data->print);
+		handle_single_philo(philo_data);
 		return (NULL);
 	}
-	while (data->philo_dead == FALSE)
-	{
-		philo_eat(philo_data);
-		philo_sleep(philo_data);
-		philo_think(philo_data);
-	}
+	// while (data->philo_dead == FALSE)
+	// {
+	// 	philo_eat(philo_data);
+	// 	philo_sleep(philo_data);
+	// 	philo_think(philo_data);
+	// }
 	return (NULL);
 }
 
@@ -86,5 +99,6 @@ void	init_philos(t_data *data)
 		pthread_mutex_init(&data->philos_array[index].fork, NULL);
 		pthread_create(&data->philos_array[index].thread, NULL, \
 			&philo_life, (void *)&data->philos_array[index]);
+		index++;
 	}
 }
