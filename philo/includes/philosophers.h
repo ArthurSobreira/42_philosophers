@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/27 17:10:35 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:34:05 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ t_bool	validate_digits(int argc, char *argv[]);
 t_bool	print_error(char *msg);
 
 /* Init */
+t_data	*get_data(void);
 void	init_data(int argc, char *argv[]);
 void	init_philos(t_data *data);
 
