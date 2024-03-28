@@ -16,7 +16,10 @@ SOURCES_PATH = ./src/
 
 SOURCES = \
 	error.c \
+	init.c \
 	main.c \
+	mutex.c \
+	mutex2.c \
 	utils.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
