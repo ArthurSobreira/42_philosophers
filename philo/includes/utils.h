@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/27 17:09:23 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/28 16:31:14 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@
 
 /* Utils */
 # define VARS_COUNT	10
+# define TAKE_FORK	"has taken a fork"
+# define EATING		"is eating"
+# define SLEEPING	"is sleeping"
+# define THINKING	"is thinking"
+# define DIED		"died"
 
 typedef enum e_bool
 {
