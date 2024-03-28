@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/27 12:57:17 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/27 17:10:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ typedef struct s_data
 	size_t			time_to_die;
 	size_t			time_to_eat;
 	size_t			time_to_sleep;
-	size_t			eat_count;
+	size_t			total_eat_count;
 }				t_data;
 
 typedef struct s_philo
@@ -54,5 +54,21 @@ size_t	ft_atost(const char *nptr);
 t_bool	validate_args(int argc, char *argv[]);
 t_bool	validate_digits(int argc, char *argv[]);
 t_bool	print_error(char *msg);
+
+/* Init */
+void	init_data(int argc, char *argv[]);
+void	init_philos(t_data *data);
+
+/* Mutex Getter */
+t_bool	getter_philo_death(void);
+size_t	getter_current_time(void);
+size_t	getter_philo_count(void);
+size_t	getter_time_to_die(void);
+size_t	getter_time_to_eat(void);
+size_t	getter_time_to_sleep(void);
+size_t	getter_total_eat_count(void);
+size_t	getter_philo_id(t_philo *philo);
+size_t 	getter_eat_count(t_philo *philo);
+size_t	getter_last_eat(t_philo *philo);
 
 #endif
