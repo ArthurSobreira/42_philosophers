@@ -21,6 +21,7 @@ SOURCES = \
 	init.c \
 	main.c \
 	philo_life.c \
+	philo_utils.c \
 	utils.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
