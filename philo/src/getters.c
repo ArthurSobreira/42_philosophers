@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:43:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 14:07:00 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:24:31 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_bool	getter_philo_death(void)
 
 size_t	getter_current_time(void)
 {
-	t_data	*data;
+	t_data			*data;
 	struct timeval	time;
 	size_t			current_time;
 
