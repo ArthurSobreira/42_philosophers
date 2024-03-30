@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 14:12:55 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:10:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct s_data
 	struct s_philo	*philos_array;
 	pthread_mutex_t	print;
 	pthread_mutex_t	m_vars[VARS_COUNT];
+	pthread_t		monitor;
 	t_bool			philo_dead;
 	size_t			start_time;
 	size_t			philo_count;
@@ -65,6 +66,7 @@ typedef struct s_philo
 }				t_philo;
 
 /* Utils */
+t_bool	ft_isdigit(int c);
 t_bool	ft_isnumber(char *str);
 size_t	ft_strlen(const char *s);
 long	ft_atol(const char *nptr);
@@ -91,5 +93,16 @@ size_t	getter_total_eat_count(void);
 size_t	getter_philo_id(t_philo *philo);
 size_t 	getter_eat_count(t_philo *philo);
 size_t	getter_last_eat(t_philo *philo);
+
+/* Monitor */
+void	*monitoring(void *data);
+t_bool	verify_philo_death(t_data *data, t_philo *philo);
+t_bool	verify_philos_meals(t_data *data);
+
+/* Philo Routine*/
+void	*philo_life(void *philo);
+void	print_status(t_philo *philo, char *msg);
+void	handle_single_philo(t_philo *philo);
+void	end_philos(t_data *data);
 
 #endif
