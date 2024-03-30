@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/28 16:34:05 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:12:55 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,26 @@
 # include <sys/time.h>
 # include <string.h>
 # include "utils.h"
+
+typedef enum e_bool
+{
+	FALSE,
+	TRUE
+}				t_bool;
+
+enum e_vars
+{
+	M_PHILO_DEAD,
+	M_START_TIME,
+	M_PHILO_COUNT,
+	M_TIME_TO_DIE,
+	M_TIME_TO_EAT,
+	M_TIME_TO_SLEEP,
+	M_TOTAL_EAT_COUNT,
+	M_PHILO_ID,
+	M_EAT_COUNT,
+	M_LAST_EAT
+};
 
 typedef struct s_data
 {
