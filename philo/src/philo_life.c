@@ -6,18 +6,18 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:20:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 14:33:56 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:48:23 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	*philo_life(void *philo)
+void	*philo_life(void *philo_ptr)
 {
 	t_philo	*philo;
 	t_data	*data;
 
-	philo = (t_philo *)philo;
+	philo = (t_philo *)philo_ptr;
 	data = get_data();
 	philo->last_eat = data->start_time;
 	if (data->philo_count == 1)
