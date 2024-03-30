@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 16:40:29 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 17:25:52 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,11 @@ t_bool	verify_philos_meals(t_data *data);
 
 /* Philo Routine*/
 void	*philo_life(void *philo_ptr);
+void	philo_eat(t_philo *philo);
+void	take_forks(t_philo *philo);
+void	drop_forks(t_philo *philo);
+void	philo_sleep(t_philo *philo);
+void	philo_think(t_philo *philo);
 void	end_philos(t_data *data);
 
 /* Philo Utils */
