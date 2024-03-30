@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:06:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 16:10:57 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:25:01 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	init_data(int argc, char *argv[])
 void	init_philos(t_data *data)
 {
 	struct timeval	time;
-	size_t	index;
+	size_t			index;
 
 	index = 0;
 	gettimeofday(&time, NULL);
