@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 16:23:16 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:32:59 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,18 +82,6 @@ t_data	*get_data(void);
 void	init_data(int argc, char *argv[]);
 void	init_philos(t_data *data);
 
-/* Mutex Getter */
-t_bool	getter_philo_death(void);
-size_t	getter_current_time(void);
-size_t	getter_philo_count(void);
-size_t	getter_time_to_die(void);
-size_t	getter_time_to_eat(void);
-size_t	getter_time_to_sleep(void);
-size_t	getter_total_eat_count(void);
-size_t	getter_philo_id(t_philo *philo);
-size_t 	getter_eat_count(t_philo *philo);
-size_t	getter_last_eat(t_philo *philo);
-
 /* Monitor */
 void	*monitoring(void *data);
 t_bool	verify_philo_death(t_data *data, t_philo *philo);
@@ -108,5 +96,17 @@ void	print_status(t_philo *philo, char *msg);
 void	handle_single_philo(t_philo *philo);
 t_bool	is_odd_philo(t_philo *philo);
 t_bool	is_even_philo(t_philo *philo);
+
+/* Mutex Getters */
+t_bool	getter_philo_death(void);
+size_t	getter_current_time(void);
+size_t	getter_philo_count(void);
+size_t	getter_time_to_die(void);
+size_t	getter_time_to_eat(void);
+size_t	getter_time_to_sleep(void);
+size_t	getter_total_eat_count(void);
+size_t	getter_philo_id(t_philo *philo);
+size_t 	getter_eat_count(t_philo *philo);
+size_t	getter_last_eat(t_philo *philo);
 
 #endif
