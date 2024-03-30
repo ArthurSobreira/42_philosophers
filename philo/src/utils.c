@@ -6,13 +6,13 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:28:29 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/26 12:05:40 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:16:20 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-static t_bool	ft_isdigit(int c)
+t_bool	ft_isdigit(int c)
 {
 	if ((c >= '0') && (c <= '9'))
 		return (TRUE);
