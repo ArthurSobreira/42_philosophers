@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 16:32:59 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 16:40:29 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,12 +83,12 @@ void	init_data(int argc, char *argv[]);
 void	init_philos(t_data *data);
 
 /* Monitor */
-void	*monitoring(void *data);
+void	*monitoring(void *philo_ptr);
 t_bool	verify_philo_death(t_data *data, t_philo *philo);
 t_bool	verify_philos_meals(t_data *data);
 
 /* Philo Routine*/
-void	*philo_life(void *philo);
+void	*philo_life(void *philo_ptr);
 void	end_philos(t_data *data);
 
 /* Philo Utils */
