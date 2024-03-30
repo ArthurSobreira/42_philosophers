@@ -12,13 +12,13 @@
 
 #include "philosophers.h"
 
-void	*monitoring(void *data)
+void	*monitoring(void *data_ptr)
 {
 	t_data	*data;
 	t_philo	*philo_array;
 	size_t	index;
 
-	data = (t_data *)data;
+	data = (t_data *)data_ptr;
 	philo_array = data->philos_array;
 	while (!data->philo_dead)
 	{
@@ -29,14 +29,15 @@ void	*monitoring(void *data)
 				return (NULL);
 			else if (verify_philos_meals(data))
 			{
-				pthread_mutex_lock(data->m_vars[M_PHILO_DEAD]);
+				pthread_mutex_lock(&data->m_vars[M_PHILO_DEAD]);
 				data->philo_dead = TRUE;
-				pthread_mutex_unlock(data->m_vars[M_PHILO_DEAD]);
+				pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
 				return (NULL);
 			}
 			index++;
 		}
 	}
+	return (NULL);
 }
 
 t_bool	verify_philo_death(t_data *data, t_philo *philo)
@@ -44,9 +45,9 @@ t_bool	verify_philo_death(t_data *data, t_philo *philo)
 	if (getter_current_time() - getter_last_eat(philo) \
 		> getter_time_to_die())
 	{
-		pthread_mutex_lock(data->m_vars[M_PHILO_DEAD]);
+		pthread_mutex_lock(&data->m_vars[M_PHILO_DEAD]);
 		data->philo_dead = TRUE;
-		pthread_mutex_unlock(data->m_vars[M_PHILO_DEAD]);
+		pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
 		print_status(philo, DIED);
 		return (TRUE);
 	}
