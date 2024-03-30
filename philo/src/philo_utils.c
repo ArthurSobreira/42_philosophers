@@ -38,3 +38,17 @@ void	handle_single_philo(t_philo *philo)
 	data->philo_dead = TRUE;
 	pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
 }
+
+t_bool	is_odd_philo(t_philo *philo)
+{
+	if (philo->philo_id % 2 != 0)
+		return (TRUE);
+	return (FALSE);
+}
+
+t_bool	is_even_philo(t_philo *philo)
+{
+	if (philo->philo_id % 2 == 0)
+		return (TRUE);
+	return (FALSE);
+}
