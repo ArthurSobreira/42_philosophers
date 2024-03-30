@@ -20,6 +20,7 @@ SOURCES = \
 	getters2.c \
 	init.c \
 	main.c \
+	monitor.c \
 	philo_actions.c \
 	philo_life.c \
 	philo_utils.c \
