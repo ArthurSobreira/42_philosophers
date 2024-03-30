@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/28 16:31:14 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/03/30 14:12:49 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,6 @@
 # define CYAN		"\033[0;36m"
 # define CYAN_BOLD	"\033[1;36m"
 # define WHITE_BOLD	"\033[1;37m"
-# define GREEN		"\033[0;32m"
-# define YELLOW		"\033[0;33m"
-# define BLUE		"\033[0;34m"
-# define MAGENTA	"\033[0;35m"
 # define RESET		"\033[0m"
 
 /* Error Messages */
@@ -43,25 +39,5 @@
 # define SLEEPING	"is sleeping"
 # define THINKING	"is thinking"
 # define DIED		"died"
-
-typedef enum e_bool
-{
-	FALSE,
-	TRUE
-}				t_bool;
-
-enum e_vars
-{
-	M_PHILO_DEAD,
-	M_START_TIME,
-	M_PHILO_COUNT,
-	M_TIME_TO_DIE,
-	M_TIME_TO_EAT,
-	M_TIME_TO_SLEEP,
-	M_TOTAL_EAT_COUNT,
-	M_PHILO_ID,
-	M_EAT_COUNT,
-	M_LAST_EAT
-};
 
 #endif
