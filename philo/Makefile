@@ -16,10 +16,10 @@ SOURCES_PATH = ./src/
 
 SOURCES = \
 	error.c \
+	getters.c \
+	getters2.c \
 	init.c \
 	main.c \
-	mutex.c \
-	mutex2.c \
 	philo_life.c \
 	utils.c \
 
