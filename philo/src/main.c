@@ -6,11 +6,11 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:27:39 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/03/30 14:27:13 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/01 15:28:16 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/philosophers.h"
+#include "philosophers.h"
 
 t_data	*get_data(void)
 {
