@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:20:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/01 15:18:13 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:46:21 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	end_philos(t_data *data)
 	size_t	index;
 
 	index = 0;
-	if (data->philo_count > 1)
+	if (getter_philo_count() > 1)
 		pthread_join(data->monitor, NULL);
 	while (index < getter_philo_count())
 		pthread_join(data->philos_array[index++].thread, NULL);
@@ -51,4 +51,5 @@ void	end_philos(t_data *data)
 		pthread_mutex_destroy(&data->m_vars[index++]);
 	pthread_mutex_destroy(&data->print);
 	free(data->philos_array);
+	printf("end_philos\n");
 }

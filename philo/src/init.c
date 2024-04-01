@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:06:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/01 12:59:31 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:48:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,11 @@ void	init_philos(t_data *data)
 		data->philos_array[index].eat_count = 0;
 		data->philos_array[index].last_eat = 0;
 		pthread_mutex_init(&data->philos_array[index].fork, NULL);
+		index++;
+	}
+	index = 0;
+	while (index < data->philo_count)
+	{
 		pthread_create(&data->philos_array[index].thread, NULL, \
 			&philo_life, (void *)&data->philos_array[index]);
 		index++;
