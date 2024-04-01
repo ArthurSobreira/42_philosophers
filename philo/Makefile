@@ -1,6 +1,7 @@
 NAME = philo
 CFLAGS = -Wall -Wextra -Werror -g3
 TFLAGS = -pthread
+VALGRIND_LOG = valgrind.log
 
 # Colors Definition 
 GREEN = "\033[32;1m"
@@ -45,6 +46,11 @@ $(NAME): $(OBJECTS)
 $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
 
+valgrind: all
+	@valgrind --tool=helgrind \
+	--log-file=$(VALGRIND_LOG) \
+	./$(NAME) 4 410 200 200 200
+
 clean:
 	@echo $(RED)[Removing Objects]$(COLOR_LIMITER)
 	@rm -rf $(BIN_PATH)
@@ -52,6 +58,7 @@ clean:
 fclean: clean
 	@echo $(RED)[Removing $(NAME)]$(COLOR_LIMITER)
 	@rm -f $(NAME)
+	@rm -f $(VALGRIND_LOG)
 
 re: fclean
 	@make --no-print-directory
