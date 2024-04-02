@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 16:06:53 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/02 14:03:09 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 16:15:31 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ void	init_philos(t_data *data)
 	index = 0;
 	gettimeofday(&time, NULL);
 	data->start_time = (time.tv_sec * 1000) + (time.tv_usec / 1000);
-	if (data->philo_count > 1)
-		pthread_create(&data->monitor, NULL, &monitoring, (void *)data);
 	while (index < data->philo_count)
 	{
 		data->philos_array[index].philo_id = index + 1;
@@ -53,7 +51,9 @@ void	init_philos(t_data *data)
 		index++;
 	}
 	index = 0;
-	while (index < data->philo_count)
+	if (getter_philo_count() > 1)
+		pthread_create(&data->monitor, NULL, &monitoring, (void *)data);
+	while (index < getter_philo_count())
 	{
 		pthread_create(&data->philos_array[index].thread, NULL, \
 			&philo_life, (void *)&data->philos_array[index]);
