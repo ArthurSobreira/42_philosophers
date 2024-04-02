@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:20:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/01 17:46:21 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 10:15:22 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,5 +51,4 @@ void	end_philos(t_data *data)
 		pthread_mutex_destroy(&data->m_vars[index++]);
 	pthread_mutex_destroy(&data->print);
 	free(data->philos_array);
-	printf("end_philos\n");
 }
