@@ -17,7 +17,7 @@ void	print_status(t_philo *philo, char *msg)
 	t_data	*data;
 	size_t	time;
 
-	if (getter_philo_death() == TRUE)
+	if (getter_philo_death())
 		return ;
 	data = get_data();
 	time = getter_current_time();
