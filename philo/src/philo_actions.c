@@ -20,6 +20,8 @@ void	philo_eat(t_philo *philo)
 		return ;
 	data = get_data();
 	take_forks(philo);
+	print_status(philo, TAKE_FORK);
+	print_status(philo, TAKE_FORK);
 	pthread_mutex_lock(&data->m_vars[M_LAST_EAT]);
 	philo->last_eat = getter_current_time();
 	pthread_mutex_unlock(&data->m_vars[M_LAST_EAT]);
@@ -58,8 +60,6 @@ void	take_forks(t_philo *philo)
 			pthread_mutex_lock(&data->philos_array[0].fork);
 		pthread_mutex_lock(&data->philos_array[pos].fork);
 	}
-	print_status(philo, TAKE_FORK);
-	print_status(philo, TAKE_FORK);
 }
 
 void	drop_forks(t_philo *philo)
