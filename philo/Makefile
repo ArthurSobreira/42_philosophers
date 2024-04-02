@@ -49,7 +49,7 @@ $(BIN_PATH):
 valgrind: all
 	@valgrind --tool=helgrind \
 	--log-file=$(VALGRIND_LOG) \
-	./$(NAME) 3 800 200 200
+	./$(NAME) 4 310 200 100
 
 clean:
 	@echo $(RED)[Removing Objects]$(COLOR_LIMITER)
