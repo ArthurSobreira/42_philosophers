@@ -39,8 +39,6 @@ void	take_forks(t_philo *philo)
 	size_t	last_philo;
 	size_t	pos;
 
-	if (getter_philo_death())
-		return ;
 	data = get_data();
 	last_philo = getter_philo_count();
 	pos = getter_philo_id(philo) - 1;
@@ -68,8 +66,6 @@ void	drop_forks(t_philo *philo)
 	size_t	last_philo;
 	size_t	pos;
 
-	if (getter_philo_death())
-		return ;
 	data = get_data();
 	last_philo = getter_philo_count();
 	pos = getter_philo_id(philo) - 1;
