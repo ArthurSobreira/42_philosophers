@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:20:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/02 10:15:22 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/02 11:02:22 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ void	*philo_life(void *philo_ptr)
 
 	philo = (t_philo *)philo_ptr;
 	data = get_data();
-	philo->last_eat = data->start_time;
 	if (data->philo_count == 1)
 	{
 		handle_single_philo(philo);
