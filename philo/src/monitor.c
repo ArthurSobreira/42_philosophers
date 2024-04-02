@@ -20,10 +20,10 @@ void	*monitoring(void *data_ptr)
 
 	data = (t_data *)data_ptr;
 	philo_array = data->philos_array;
-	while (!data->philo_dead)
+	while (!getter_philo_death())
 	{
 		index = 0;
-		while (index < data->philo_count)
+		while (index < getter_philo_count())
 		{
 			if (verify_philo_death(data, &philo_array[index]))
 				return (NULL);
@@ -45,10 +45,10 @@ t_bool	verify_philo_death(t_data *data, t_philo *philo)
 	if (getter_current_time() - getter_last_eat(philo) \
 		> getter_time_to_die())
 	{
+		print_status(philo, DIED);
 		pthread_mutex_lock(&data->m_vars[M_PHILO_DEAD]);
 		data->philo_dead = TRUE;
 		pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
-		print_status(philo, DIED);
 		return (TRUE);
 	}
 	return (FALSE);
