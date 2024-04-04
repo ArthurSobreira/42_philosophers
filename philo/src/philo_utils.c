@@ -26,7 +26,7 @@ void	print_status(t_philo *philo, char *msg)
 	pthread_mutex_unlock(&data->print);
 }
 
-void	handle_single_philo(t_philo *philo)
+void	memento_mori(t_philo *philo)
 {
 	t_data	*data;
 
