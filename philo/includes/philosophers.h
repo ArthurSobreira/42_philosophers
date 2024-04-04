@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 15:01:38 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:43:13 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,13 +65,6 @@ typedef struct s_philo
 	pthread_mutex_t	fork;
 }				t_philo;
 
-/* Utils */
-t_bool	ft_isdigit(int c);
-t_bool	ft_isnumber(char *str);
-size_t	ft_strlen(const char *s);
-long	ft_atol(const char *nptr);
-size_t	ft_atost(const char *nptr);
-
 /* Error */
 t_bool	validate_args(int argc, char *argv[]);
 t_bool	validate_digits(int argc, char *argv[]);
@@ -113,5 +106,12 @@ size_t	getter_total_eat_count(void);
 size_t	getter_philo_id(t_philo *philo);
 size_t	getter_eat_count(t_philo *philo);
 size_t	getter_last_eat(t_philo *philo);
+
+/* Utils */
+t_bool	ft_isdigit(int c);
+t_bool	ft_isnumber(char *str);
+size_t	ft_strlen(const char *s);
+long	ft_atol(const char *nptr);
+size_t	ft_atost(const char *nptr);
 
 #endif
