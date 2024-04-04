@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:36:01 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 16:04:36 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:28:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,9 @@ void	wait_philos(t_data *data)
 	}
 	if (status == EXIT_FAILURE)
 	{
-		index = -1;
-		while (++index < data->philo_count)
-			kill(data->philos_array[index].pid, SIGKILL);
+		index = 0;
+		while (index < data->philo_count)
+			kill(data->philos_array[index++].pid, SIGKILL);
 	}
 }
 
@@ -67,5 +67,4 @@ void	memento_mori(t_philo *philo)
 	usleep(data->time_to_die * 1000);
 	print_status(philo, DIED);
 	end_philos(data);
-	exit(EXIT_SUCCESS);
 }
