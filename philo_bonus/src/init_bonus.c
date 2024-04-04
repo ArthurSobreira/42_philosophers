@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:13:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 14:42:49 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:11:26 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	init_philos(t_data *data)
 			data->philos_array[index].philo_id = index + 1;
 			data->philos_array[index].eat_count = 0;
 			data->philos_array[index].last_eat = 0;
-			// philo_life(&data->philos_array[index]);
+			philo_life(&data->philos_array[index]);
 		}
 		index++;
 	}
