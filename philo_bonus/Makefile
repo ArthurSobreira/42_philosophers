@@ -44,9 +44,11 @@ $(BIN_PATH):
 	@mkdir -p $(BIN_PATH)
 
 valgrind: all
-	@valgrind --tool=helgrind \
+	@valgrind --leak-check=full \
+	--show-leak-kinds=all \
+	--track-origins=yes \
 	--log-file=$(VALGRIND_LOG) \
-	./$(NAME) 4 310 200 100
+	./$(NAME) 1 310 200 100
 
 clean:
 	@echo $(RED)[Removing Objects]$(COLOR_LIMITER)
