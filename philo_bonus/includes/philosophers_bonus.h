@@ -29,7 +29,7 @@ typedef enum e_bool
 {
 	FALSE,
 	TRUE
-}				t_bool;
+}			t_bool;
 
 typedef struct s_data
 {
@@ -44,20 +44,13 @@ typedef struct s_data
 	size_t			total_eat_count;
 }				t_data;
 
-typedef	struct s_philo
+typedef struct s_philo
 {
 	pid_t			pid;
 	size_t			philo_id;
 	size_t			eat_count;
 	size_t			last_eat;
 }				t_philo;
-
-/* Utils */
-t_bool	ft_isdigit(int c);
-t_bool	ft_isnumber(char *str);
-size_t	ft_strlen(const char *s);
-long	ft_atol(const char *nptr);
-size_t	ft_atost(const char *nptr);
 
 /* Error */
 t_bool	validate_args(int argc, char *argv[]);
@@ -73,6 +66,9 @@ void	unlink_semaphores(void);
 
 /* Philo Routine*/
 void	philo_life(t_philo *philo);
+void	philo_eat(t_philo *philo);
+void	philo_sleep(t_philo *philo);
+void	philo_think(t_philo *philo);
 void	monitoring(t_philo *philo);
 void	end_philos(t_data *data);
 
@@ -81,5 +77,12 @@ void	print_status(t_philo *philo, char *msg);
 size_t	get_current_time(void);
 void	wait_philos(t_data *data);
 void	memento_mori(t_philo *philo);
+
+/* Utils */
+t_bool	ft_isdigit(int c);
+t_bool	ft_isnumber(char *str);
+size_t	ft_strlen(const char *s);
+long	ft_atol(const char *nptr);
+size_t	ft_atost(const char *nptr);
 
 #endif
