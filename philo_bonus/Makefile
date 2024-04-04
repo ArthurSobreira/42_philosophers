@@ -17,6 +17,7 @@ SOURCES_PATH = ./src/
 
 SOURCES = \
 	error_bonus.c \
+	init_bonus.c \
 	main_bonus.c \
 	utils_bonus.c \
 
