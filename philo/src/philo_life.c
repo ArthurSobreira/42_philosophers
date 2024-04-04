@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 17:20:34 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/03 20:45:03 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:37:41 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ void	*philo_life(void *philo_ptr)
 		handle_single_philo(philo);
 		return (NULL);
 	}
-	while (!getter_philo_death())
+	while (TRUE)
 	{
+		if (getter_philo_death())
+			break ;
 		philo_eat(philo);
 		philo_sleep(philo);
 		philo_think(philo);
