@@ -21,14 +21,15 @@ t_data	*get_data(void)
 
 int	main(int argc, char *argv[])
 {
-	// t_data	*data;
+	t_data	*data;
 
 	if (validate_args(argc, argv))
 	{
-		// data = get_data();
-		// init_data(argc, argv);
-		// init_philos(data);
-		// end_philos(data);
+		data = get_data();
+		init_data(argc, argv);
+		init_philos(data);
+		wait_philos(data);
+		end_philos(data);
 		return (EXIT_SUCCESS);
 	}
 	return (EXIT_FAILURE);
