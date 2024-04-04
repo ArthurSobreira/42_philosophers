@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:36:01 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 14:42:54 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:10:35 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,18 +24,15 @@ void	print_status(t_philo *philo, char *msg)
 	sem_post(data->print);
 }
 
-// void	memento_mori(t_philo *philo)
-// {
-// 	t_data	*data;
-// 	pid_t	pid;
+void	memento_mori(t_philo *philo)
+{
+	t_data	*data;
 
-// 	data = get_data();
-// 	pid = philo->pid;
-
-// 	print_status(philo, TAKE_FORK);
-// 	usleep(data->time_to_die * 1000);
-// 	print_status(philo, DIED);
-// 	sem_wait(data->print);
-// 	data->philo_dead = TRUE;
-// 	sem_post(data->print);
-// }
+	data = get_data();
+	print_status(philo, TAKE_FORK);
+	usleep(data->time_to_die * 1000);
+	print_status(philo, DIED);
+	sem_close(data->print);
+	sem_close(data->forks);
+	exit(EXIT_SUCCESS);
+}
