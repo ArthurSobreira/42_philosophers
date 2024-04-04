@@ -19,6 +19,9 @@ SOURCES = \
 	error_bonus.c \
 	init_bonus.c \
 	main_bonus.c \
+	philo_actions_bonus.c \
+	philo_life_bonus.c \
+	philo_utils_bonus.c \
 	utils_bonus.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
