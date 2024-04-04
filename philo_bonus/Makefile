@@ -16,8 +16,9 @@ BIN_PATH = ./bin/
 SOURCES_PATH = ./src/
 
 SOURCES = \
-	error.c \
-	main.c \
+	error_bonus.c \
+	main_bonus.c \
+	utils_bonus.c \
 
 OBJECTS = $(addprefix $(BIN_PATH), $(SOURCES:%.c=%.o))
 
