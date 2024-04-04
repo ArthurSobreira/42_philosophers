@@ -6,12 +6,12 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 12:36:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/02 17:08:45 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/03 21:01:43 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#ifndef UTILS_H
+# define UTILS_H
 
 /* Colors */
 # define RED "\033[0;31m"
