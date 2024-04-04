@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 18:43:13 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:51:26 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef enum e_bool
 {
 	FALSE,
 	TRUE
-}				t_bool;
+}			t_bool;
 
 enum e_vars
 {
