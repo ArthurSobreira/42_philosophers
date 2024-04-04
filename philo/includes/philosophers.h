@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/19 15:15:38 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/02 16:52:37 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 15:01:38 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,7 +98,7 @@ void	end_philos(t_data *data);
 
 /* Philo Utils */
 void	print_status(t_philo *philo, char *msg);
-void	handle_single_philo(t_philo *philo);
+void	memento_mori(t_philo *philo);
 t_bool	is_odd_philo(t_philo *philo);
 t_bool	is_even_philo(t_philo *philo);
 
