@@ -68,10 +68,12 @@ t_bool	print_error(char *msg);
 t_data	*get_data(void);
 void	init_data(int argc, char *argv[]);
 void	init_philos(t_data *data);
+void	close_semaphores(void);
 void	unlink_semaphores(void);
 
 /* Philo Routine*/
 void	philo_life(t_philo *philo);
+void	monitoring(t_philo *philo);
 void	end_philos(t_data *data);
 
 /* Philo Utils */
