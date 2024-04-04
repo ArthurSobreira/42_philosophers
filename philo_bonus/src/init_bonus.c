@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:13:41 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 15:54:00 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/04 18:06:24 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,4 +59,13 @@ void	unlink_semaphores(void)
 {
 	sem_unlink("/print");
 	sem_unlink("/forks");
+}
+
+void	close_semaphores(void)
+{
+	t_data	*data;
+
+	data = get_data();
+	sem_close(data->print);
+	sem_close(data->forks);
 }
