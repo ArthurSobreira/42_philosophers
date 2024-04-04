@@ -33,6 +33,7 @@ typedef enum e_bool
 
 typedef struct s_data
 {
+	struct s_philo	*philos_array;
 	size_t			start_time;
 	size_t			philo_count;
 	size_t			time_to_die;
@@ -43,6 +44,7 @@ typedef struct s_data
 
 typedef	struct s_philo
 {
+	pid_t			pid;
 	size_t			id;
 	size_t			eat_count;
 	size_t			last_eat;
