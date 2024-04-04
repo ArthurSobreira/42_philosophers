@@ -34,6 +34,8 @@ typedef enum e_bool
 typedef struct s_data
 {
 	struct s_philo	*philos_array;
+	sem_t			*print;
+	sem_t			*forks;
 	size_t			start_time;
 	size_t			philo_count;
 	size_t			time_to_die;
@@ -45,7 +47,7 @@ typedef struct s_data
 typedef	struct s_philo
 {
 	pid_t			pid;
-	size_t			id;
+	size_t			philo_id;
 	size_t			eat_count;
 	size_t			last_eat;
 }				t_philo;
@@ -61,5 +63,10 @@ size_t	ft_atost(const char *nptr);
 t_bool	validate_args(int argc, char *argv[]);
 t_bool	validate_digits(int argc, char *argv[]);
 t_bool	print_error(char *msg);
+
+/* Init */
+void	init_data(int argc, char *argv[]);
+void	init_philos(t_data *data);
+void	unlink_semaphores(void);
 
 #endif
