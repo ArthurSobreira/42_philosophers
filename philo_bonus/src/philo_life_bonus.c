@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:44:06 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 18:42:22 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:56:56 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ void	monitoring(t_philo *philo)
 			print_status(philo, DIED);
 			status = EXIT_FAILURE;
 		}
+		free(data->philos_array);
 		close_semaphores();
 		exit(status);
 	}
@@ -56,9 +57,6 @@ void	monitoring(t_philo *philo)
 
 void	end_philos(t_data *data)
 {
-	size_t	index;
-
-	index = 0;
 	free(data->philos_array);
 	close_semaphores();
 	unlink_semaphores();
