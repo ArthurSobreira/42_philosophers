@@ -66,6 +66,8 @@ void	unlink_semaphores(void);
 
 /* Philo Routine*/
 void	philo_life(t_philo *philo);
+void	take_forks(t_philo *philo);
+void	drop_forks(t_philo *philo);
 void	philo_eat(t_philo *philo);
 void	philo_sleep(t_philo *philo);
 void	philo_think(t_philo *philo);
@@ -76,6 +78,7 @@ void	end_philos(t_data *data);
 void	print_status(t_philo *philo, char *msg);
 size_t	get_current_time(void);
 void	wait_philos(t_data *data);
+void	step_by_step(t_philo *philo, size_t step);
 void	memento_mori(t_philo *philo);
 
 /* Utils */
