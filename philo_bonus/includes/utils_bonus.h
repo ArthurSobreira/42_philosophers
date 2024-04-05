@@ -33,7 +33,6 @@
 # define CLOSE_SBRACKET "\033[1;36m]\033[0m"
 
 /* Utils */
-# define ANY_PHILO -1
 # define TAKE_FORK "🍽  \033[1;37mhas taken a fork"
 # define EATING "🍝 \033[1;33mis eating\033[0m"
 # define SLEEPING "💤 \033[1;36mis sleeping\033[0m"
