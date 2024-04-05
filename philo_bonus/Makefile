@@ -48,7 +48,7 @@ valgrind: all
 	--show-leak-kinds=all \
 	--track-origins=yes \
 	--log-file=$(VALGRIND_LOG) \
-	./$(NAME) 1 310 200 100
+	./$(NAME) 4 410 200 200
 
 clean:
 	@echo $(RED)[Removing Objects]$(COLOR_LIMITER)
