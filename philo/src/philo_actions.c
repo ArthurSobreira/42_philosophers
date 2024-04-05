@@ -16,7 +16,8 @@ void	philo_eat(t_philo *philo)
 {
 	t_data	*data;
 
-	if (getter_philo_death())
+	if (getter_eat_count(philo) == getter_total_eat_count() || \
+		getter_philo_death())
 		return ;
 	data = get_data();
 	take_forks(philo);
