@@ -25,15 +25,15 @@ void	*monitoring(void *data_ptr)
 		index = 0;
 		while (index < getter_philo_count())
 		{
-			if (verify_philo_death(data, &philo_array[index]))
-				return (NULL);
-			else if (verify_philos_meals(data))
+			if (verify_philos_meals(data))
 			{
 				pthread_mutex_lock(&data->m_vars[M_PHILO_DEAD]);
 				data->philo_dead = TRUE;
 				pthread_mutex_unlock(&data->m_vars[M_PHILO_DEAD]);
 				return (NULL);
 			}
+			else if (verify_philo_death(data, &philo_array[index]))
+				return (NULL);
 			index++;
 		}
 	}
