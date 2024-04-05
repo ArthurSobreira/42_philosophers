@@ -6,7 +6,7 @@
 /*   By: arsobrei <arsobrei@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/04 14:36:01 by arsobrei          #+#    #+#             */
-/*   Updated: 2024/04/04 18:28:35 by arsobrei         ###   ########.fr       */
+/*   Updated: 2024/04/05 10:52:53 by arsobrei         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,18 +43,33 @@ void	wait_philos(t_data *data)
 	int		status;
 
 	index = 0;
+	status = EXIT_SUCCESS;
 	while (index < data->philo_count)
 	{
-		waitpid(ANY_PHILO, &status, 0);
+		waitpid(0, &status, 0);
 		if (WIFEXITED(status) && WEXITSTATUS(status) == EXIT_FAILURE)
 			break ;
 		index++;
 	}
-	if (status == EXIT_FAILURE)
+	if (status != EXIT_SUCCESS)
 	{
 		index = 0;
 		while (index < data->philo_count)
 			kill(data->philos_array[index++].pid, SIGKILL);
+	}
+}
+
+void	step_by_step(t_philo *philo, size_t step)
+{
+	t_data	*data;
+	size_t	current_time;
+
+	data = get_data();
+	current_time = get_current_time();
+	while (get_current_time() - current_time < step)
+	{
+		usleep(10);
+		monitoring(philo);
 	}
 }
 
