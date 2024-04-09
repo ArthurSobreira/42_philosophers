@@ -8,6 +8,7 @@
 
 ## Summary
 
-> <i>The nineth project in the 42sp fundamentals track, <strong>Philosophers</strong>, 
+> <i>The ninth project in the 42sp fundamentals track, <strong>Philosophers</strong>, is about to solve the the Dining Philosophers Problem, </i>
+> <i>a famous a famous problem in computer science used to illustrate common issues in concurrent programming
 
 <br>
